@@ -11,3 +11,4 @@ module "nodejs" {
 
   prefix = "${var.nodejs_prefix}"
   ssh_key_name = "${var.nodejs_ssh_key_name}"
+}
