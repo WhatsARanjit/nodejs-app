@@ -1,16 +1,15 @@
 //--------------------------------------------------------------------
-// Variables
-variable "nodejs_security_group_id" {}
-variable "nodejs_vault_ip" {}
-
-//--------------------------------------------------------------------
 // Modules
 module "nodejs" {
   source  = "app.terraform.io/hashijit/nodejs/aws"
-  version = "0.1.0"
+  version = "0.1.1"
 
-  prefix = "ibcg"
-  security_group_id = "${var.nodejs_security_group_id}"
+  prefix = "ranjit-bcg"
+  security_group_id = "sg-0eb81199a3f8bc1ec"
   ssh_key_name = "ranjit-vault-demo"
-  vault_ip = "${var.nodejs_vault_ip}"
+  vault_ip = "http://54.84.109.55:8200"
+}
+  
+output "myIP" {
+  value = "${module.nodejs.ip}"
 }
