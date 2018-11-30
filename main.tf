@@ -13,3 +13,13 @@ module "nodejs" {
 output "myIP" {
   value = "${module.nodejs.ip}"
 }
+
+resource "aws_s3_bucket" "clever_idea" {
+  bucket = "catch_me"
+  acl    = "private"
+
+  tags {
+    Name        = "My bucket"
+    Environment = "Dev"
+  }
+}
