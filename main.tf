@@ -14,6 +14,10 @@ output "myIP" {
   value = "${module.nodejs.ip}"
 }
 
+provider "aws" {
+  region = "us-east-1"
+}
+
 resource "aws_s3_bucket" "clever_idea" {
   bucket = "catch_me"
   acl    = "private"
